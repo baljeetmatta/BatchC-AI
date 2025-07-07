@@ -120,3 +120,143 @@ Palindrome ->
 2. strx
 
 */
+
+
+//arrays, group of homogenous(similar type)
+//C,C++,Java -> int 
+//group of variables (hetrogenous)
+//int a=10;
+//int arr[5];//compiler
+//int arr=new int[5];
+//int arr[]={344,4,5,6,5}
+// let arr=[3,23,45,"Data",32.5];
+// //0-4,5,6
+// arr[60]=20;
+// //*(arr+6)
+// //*(arr+0)
+// console.log(arr);
+//console.log(arr);
+//let arr1=new Array(10);
+
+//let arr=[34,4,5,6,7,5];
+let arr1=[100,200,300];
+let arr2=[400,500,500];
+///1. Traverse
+// print(arr1);
+// print(arr);
+
+
+
+// function print(array)
+// {
+//     for(i=0;i<array.length;i++)
+//       console.log(array[i]);
+// }
+//2.Custom Function
+/*
+function mylogic(item,index,array)
+{
+console.log("My Logic",item,index,array[index-1])
+}
+print(arr,mylogic);
+print(arr1,mylogic);
+function print(array,callback)
+{
+    for(i=0;i<array.length;i++)
+        callback(array[i],i,array);
+
+
+}
+*/
+//1. for
+//2. 3 iterators forEach,map,filter
+//arr.forEach(iterate)
+// arr.forEach(function(item,index,array){
+
+//     console.log('Data ',item);
+
+// })
+
+// function iterate(item,index,array)
+// {
+//     console.log(item);
+
+
+// }
+
+let arr=[34,4,5,6,7,5];
+/*let result=[];
+for(i=0;i<arr.length;i++)
+{
+    if(arr[i]%2==0)
+        result.push(arr[i]);
+
+}*/
+/*
+let result=arr.filter(function(item){
+    if(item%2==0)
+        return true;
+
+})
+console.log(result);
+*/
+// let result=[];
+// for(i=0;i<arr.length;i++)
+//     result.push(arr[i]*2);
+// console.log(result);
+
+let result=arr.map(function(item){
+    if(item%2==0)
+    return item*2;
+    else
+    return 0;
+})
+console.log(result);
+
+
+
+//push,pop,shift,unshift, splice
+/*
+console.log(arr);
+arr.push(100);
+console.log(arr);
+let item=arr.pop();
+console.log(arr);
+console.log(item);
+
+console.log(arr);
+arr.unshift(100);
+console.log(arr);
+arr.shift();*/
+//console.log(arr);
+//arr.splice(arr.length-1,1);
+//arr.splice(2,2,20,30,40,50)
+
+console.log(arr);
+//for(i=0;i<arr.length;i++)
+
+
+//1. Traverse
+//  for(i=0;i<arr.length;i++)
+//      console.log(arr[i]);
+// //callback
+//  for(i=0;i<arr1.length;i++)
+//      console.log(arr1[i]);
+
+/*
+function bikeService(x)
+{
+    //background
+    x();
+
+}
+function bikeWash()
+{
+
+}
+
+bikeService(bikeWash);
+
+*/
+
+
