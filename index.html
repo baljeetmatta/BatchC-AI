@@ -1,11 +1,34 @@
 <html>
-    <head>
 
-    </head>
-    <body>
+<head>
+<style>
+    .format{
+        background-color: aqua;
+        padding: 10px;
+    }
+</style>
+</head>
 
-        <script src="js/script.js">
-            
-        </script>
-    </body>
-    </html>
+<body>
+    <p>asdsads</p>
+   <p id="pContent"> DOM - Document Object Model</p>
+   <p onclick="clickHandler()"><b>Second</b></p>
+   <!-- <img src="images/1.jpg" width="150" onmouseover="this.src='images/2.jpg'" onmouseout="this.src='images/1.jpg'"/> -->
+<!-- <img src="images/1.jpg" width="150" onmouseover="changeImage(this)"/> -->
+
+<img src="images/1.jpg" width="150" id="bigImage"/>
+<div>
+
+    <img src="images/1.jpg" width="50" onmouseover="changeBanner(this)"/>
+    <img src="images/2.jpg" width="50" onmouseover="changeBanner(this)"/>
+    <img src="images/3.jpg" width="50" onmouseover="changeBanner(this)"/>
+    <img src="images/4.jpg" width="50" onmouseover="changeBanner(this)"/>
+</div>
+    
+   
+   <script src="js/dom.js">
+       
+    </script>
+</body>
+
+</html>
