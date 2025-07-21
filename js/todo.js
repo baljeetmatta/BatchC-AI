@@ -12,6 +12,29 @@
 
 
 // })
+//Cookies
+//localStorage
+//localStorage-->setItem, getItem
+//localStorage.setItem("name",10);
+
+// let arr=[12,23,34,34];
+// console.log(arr);
+// document.write(arr);
+
+// localStorage.setItem("array",JSON.stringify( arr));
+// let testarr=JSON.parse( localStorage.getItem("array"));
+// console.log(testarr[0]);
+/*
+let obj={name:"Test"};
+//console.log(obj);
+//document.write(JSON.stringify(obj));
+localStorage.setItem("object",JSON.stringify( obj));
+let obj1=JSON.parse(localStorage.getItem("object"));
+console.log(obj1);
+*/
+
+
+
 let tasks = [];
 let taskid = 1;
 
@@ -32,7 +55,7 @@ taskname.addEventListener("keyup", function (e) {
         }
         taskid++;
         tasks.push(task);
-
+        saveTasks()
         addDom(task);
         taskname.value = "";
     }
@@ -71,6 +94,7 @@ function addDom(task) {
 
 
         console.log(tasks);
+        saveTasks();
 
 
     })
@@ -107,5 +131,31 @@ function delHandler(evt)
                 return true;
         })
         console.log(tasks);
+        saveTasks()
 
 }
+function saveTasks()
+{
+    localStorage.setItem("tasks",JSON.stringify(tasks));
+
+}
+function getTasks()
+{
+    if(localStorage.getItem("tasks"))
+       tasks= JSON.parse( localStorage.getItem("tasks"));
+
+       tasks.forEach(function(task){
+        if(taskid<task.id)
+            taskid=task.id;
+
+        addDom(task);
+       })
+       if(tasks.length!=0)
+       taskid++;
+
+
+
+}
+getTasks();
+localStorage.setItem("tasks","asdsa");
+
