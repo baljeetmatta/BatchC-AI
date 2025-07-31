@@ -1,0 +1,26 @@
+<html>
+    <body>
+        XMLHttpRequest, fetch->promise
+
+        <script>
+            let obj={
+                job:"Dummy job",
+                name:"Dummy name"
+            }
+            fetch("https://reqres.in/api/users",{
+                method:"POST",
+                headers:{
+                    "x-api-key":"reqres-free-v1",
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify(obj)
+            })
+            .then((response)=>{ //promise
+                //console.log(response);
+              return  response.json();//promise
+            }).then((data)=>{
+                console.log(data)
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <body>
+
+        <input type="text" id="name"/>
+        <input type="text" id="job"/>
+        <button id="sendBtn">Send</button>
+
+        <script>
+
+const name=document.querySelector("#name");
+const job=document.querySelector("#job");
+const sendBtn=document.querySelector("#sendBtn");
+sendBtn.addEventListener("click",()=>{
+
+    let obj={
+        name:name.value,
+        job:job.value
+    }
+    let xmlRequest=new XMLHttpRequest();
+    xmlRequest.open("POST","https://reqres.in/api/users");
+    xmlRequest.addEventListener("load",()=>{
+
+        console.log(xmlRequest.responseText);
+
+
+    })
+   xmlRequest.setRequestHeader("x-api-key","reqres-free-v1");
+   xmlRequest.setRequestHeader("content-type","application/json");
+   
+    xmlRequest.send(JSON.stringify(obj));
+
+})
+
+        </script>
+    </body>
+</html>

@@ -45,18 +45,20 @@ const container=document.querySelector("#container");
 //1. Object
 let xmlHttpRequest=new XMLHttpRequest();
 //2. Prepare
-xmlHttpRequest.open("GET","https://jsonplaceholder.typicode.com/posts");
+//xmlHttpRequest.open("GET","https://jsonplaceholder.typicode.com/posts");
+xmlHttpRequest.open("GET","https://reqres.in/api/users?page=2");
 //3. Event Handle
 /*xmlHttpRequest.onload=function(){
 
 }*/
 
 xmlHttpRequest.addEventListener("load",()=>{
-//console.log(xmlHttpRequest.responseText);
-let obj=JSON.parse(xmlHttpRequest.responseText);
-obj.forEach((item)=>{
-    addBlog(item)
-})
+console.log(JSON.parse(xmlHttpRequest.responseText));
+
+// let obj=JSON.parse(xmlHttpRequest.responseText);
+// obj.forEach((item)=>{
+//     addBlog(item)
+// })
 //console.log(obj);
 
 
@@ -84,5 +86,6 @@ let addBlog=(item)=>{
 
 // })
 //4.Send
+xmlHttpRequest.setRequestHeader("x-api-key","reqres-free-v1")
 xmlHttpRequest.send();
 
